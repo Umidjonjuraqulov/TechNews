@@ -1,0 +1,16 @@
+{% extends 'news/base.html' %}
+
+{% block title %}Blockchain Tech{% endblock %}
+
+{% block content %}
+    <h1>Blockchain Technology</h1>
+    <div class="list-group">
+        {% for article in blockchain_articles %}
+            <div class="list-group-item">
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.content }}</p>
+                <small>{{ article.published_date }}</small>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

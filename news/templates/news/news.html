@@ -1,0 +1,16 @@
+{% extends 'news/base.html' %}
+
+{% block title %}Yangiliklar Bo'limi{% endblock %}
+
+{% block content %}
+    <h1>So'nggi Texnologik Yangiliklar va Maqolalar</h1>
+    <div class="list-group">
+        {% for article in news_articles %}
+            <div class="list-group-item">
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.content }}</p>
+                <small>{{ article.published_date }}</small>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

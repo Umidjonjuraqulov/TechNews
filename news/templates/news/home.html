@@ -1,0 +1,38 @@
+{% extends 'news/base.html' %}
+
+{% block title %}Bosh Sahifa{% endblock %}
+
+{% block content %}
+    <h1>Eng So'nggi Yangiliklar</h1>
+    <div class="list-group">
+        {% for article in news_articles %}
+            <div class="list-group-item">
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.content }}</p>
+                <small>{{ article.published_date }}</small>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h1 class="mt-4">Mashhur Maqolalar</h1>
+    <div class="list-group">
+        {% for article in popular_articles %}
+            <div class="list-group-item">
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.content }}</p>
+                <small>{{ article.published_date }}</small>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h1 class="mt-4">Tanlangan Sharhlar</h1>
+    <div class="list-group">
+        {% for review in selected_reviews %}
+            <div class="list-group-item">
+                <h4>{{ review.title }}</h4>
+                <p>{{ review.content }}</p>
+                <small>{{ review.published_date }}</small>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
